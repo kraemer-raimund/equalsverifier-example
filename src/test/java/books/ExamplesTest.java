@@ -10,6 +10,7 @@ class ExamplesTest {
     void equalsHashCodeIsCorrect() {
         EqualsVerifier.forClass(Book.class).verify();
         EqualsVerifier.forClass(Genre.class).verify();
+        EqualsVerifier.forClass(Author.class).verify();
     }
 
     @Test
