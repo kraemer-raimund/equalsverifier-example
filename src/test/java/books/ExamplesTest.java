@@ -41,4 +41,9 @@ class ExamplesTest {
     void equalsHashCodeIsCorrectInMultipleClasses() {
         EqualsVerifier.forClasses(classesToCheck).verify();
     }
+
+    @Test
+    void equalsHashCodeIsCorrectInTheWholePackage() {
+        EqualsVerifier.forPackage("books").verify();
+    }
 }
