@@ -4,6 +4,8 @@ import nl.jqno.equalsverifier.EqualsVerifier;
 import nl.jqno.equalsverifier.Warning;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 class ExamplesTest {
 
     @Test
@@ -26,5 +28,17 @@ class ExamplesTest {
                 .forClass(Genre.class)
                 .suppress(Warning.NONFINAL_FIELDS)
                 .verify();
+    }
+
+    private static final Iterable<Class<?>> classesToCheck = List.of(
+            Author.class,
+            Book.class,
+            Genre.class
+            // ...
+    );
+
+    @Test
+    void equalsHashCodeIsCorrectInMultipleClasses() {
+        EqualsVerifier.forClasses(classesToCheck).verify();
     }
 }
